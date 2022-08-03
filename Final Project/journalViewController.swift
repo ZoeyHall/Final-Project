@@ -9,9 +9,26 @@ import UIKit
 
 class journalViewController: UIViewController {
 
+    
+    @IBOutlet var field: UITextView!
+    @IBOutlet var button: UIButton!
+    
+    
+    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        field.returnKeyType = .done
+        field.autocapitalizationType = .sentences
+        field.autocorrectionType = .no
+        field.becomeFirstResponder()
+    }
+    
+    @IBAction func buttonTapped() {
+        field.resignFirstResponder()
+    
+       
         // Do any additional setup after loading the view.
     }
     
