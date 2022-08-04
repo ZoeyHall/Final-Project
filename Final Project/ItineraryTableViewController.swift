@@ -18,10 +18,20 @@ class ItineraryTableViewController: UITableViewController {
     }
     func createTasks() -> [Tasks] {
 
-        let brunch = Tasks(taskName:"Brunch", taskTime: "11:00 AM", taskDate: "July 15", taskLocation: "Little Neck", isImportant: false)
-      
+        let brunch = Tasks()
+        brunch.name = "Brunch"
+        brunch.time = "11:00 AM"
+        brunch.date = "August 4"
+        brunch.location = "Little Neck"
+        
+      let sightseeing = Tasks()
+        sightseeing.name = "Sightseeing"
+        sightseeing.time = "2:00 PM"
+        sightseeing.date = "August 4"
+        sightseeing.location = "Gyeongbokgung Palace"
+        sightseeing.important = true
 
-        let sightseeing = Tasks(taskName: "Sightseeing", taskTime: "2:00 PM", taskDate: "July 15", taskLocation: "Gyeongbokgung Palace", isImportant : true)
+
    
 
       return [brunch, sightseeing]
@@ -54,6 +64,11 @@ class ItineraryTableViewController: UITableViewController {
           return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let addVC = segue.destination as? AddToItineraryViewController {
+        addVC.previousVC = self
+      }
+    }
 
     /*
     // Override to support conditional editing of the table view.
