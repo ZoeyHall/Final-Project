@@ -32,16 +32,23 @@ class AddToItineraryViewController: UIViewController {
     
     @IBAction func addToItinerary(_ sender: Any) {
         let newTask = Tasks()
-         let time = timeTextField.text
-         let date = dateTextField.text
-        let location = locationTextField.text
+         
+         
+       
         if let name = nameTextField.text{
             newTask.name = name
-            newTask.time = time
-            newTask.date = date
-            newTask.location = location
-            newTask.important = importantSwitch.isOn
         }
+        if let time = timeTextField.text {
+            newTask.time = time
+        }
+        if let date = dateTextField.text {
+            newTask.date = date
+        }
+        if  let location = locationTextField.text {
+            newTask.location = location
+        }
+           
+        newTask.important = importantSwitch.isOn
         
           
         previousVC.tasks.append(newTask)
