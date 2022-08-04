@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -78,9 +78,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <segue destination="m3P-wY-WFh" kind="show" id="FS7-mh-jiu"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Barcelona" translatesAutoresizingMaskIntoConstraints="NO" id="oTj-Jr-dzn">
                                 <rect key="frame" x="44" y="655" width="137" height="111"/>
@@ -120,7 +117,7 @@
             <objects>
                 <viewController id="m3P-wY-WFh" customClass="photosViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jDc-d5-cKV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TvL-Eq-DN2">
@@ -131,11 +128,7 @@
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="HQU-qY-oTK"/>
                                         <leftBarButtonItems>
                                             <barButtonItem title="Photos" id="qzJ-wS-zwh"/>
-                                            <barButtonItem title="Itinerary" id="ugu-r1-wR8">
-                                                <connections>
-                                                    <segue destination="8Bj-jY-v7t" kind="show" id="1GJ-VE-Gzp"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <barButtonItem title="Itinerary" id="ugu-r1-wR8"/>
                                             <barButtonItem title="Journal" id="IMa-UQ-Zph">
                                                 <connections>
                                                     <segue destination="Ing-If-g6e" kind="show" id="ai3-3o-hwN"/>
@@ -229,101 +222,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZE-nM-EW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873.91304347826099" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1784.057971014493" y="97.767857142857139"/>
         </scene>
-        <!--Itinerary View Controller-->
-        <scene sceneID="8Jr-AA-P4v">
+        <!--Itinerary Table View Controller-->
+        <scene sceneID="3wD-tz-2Pt">
             <objects>
-                <viewController id="8Bj-jY-v7t" customClass="itineraryViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fvH-aa-hEI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <tableViewController id="ysi-vq-2sa" customClass="ItineraryTableViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="X9C-pN-UEg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seoul Trip 🛫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-5p-TVU">
-                                <rect key="frame" x="131" y="56" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwA-jZ-24L">
-                                <rect key="frame" x="0.0" y="114" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="HGV-to-dZw">
-                                        <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="tnj-UJ-P7A"/>
-                                        <leftBarButtonItems>
-                                            <barButtonItem title="Photos" id="1Vf-g7-Xck">
-                                                <connections>
-                                                    <segue destination="m3P-wY-WFh" kind="show" id="qDb-AM-yCV"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Itinerary" id="ZJv-Qc-Dx8"/>
-                                            <barButtonItem title="Journal" id="GJB-7e-oW2">
-                                                <connections>
-                                                    <segue destination="Ing-If-g6e" kind="show" id="8Qc-U3-lso"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Documents" id="3nM-bI-XDO">
-                                                <connections>
-                                                    <segue destination="oX2-7I-gBu" kind="show" id="JGa-CQ-qN7"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-lb-2Xo">
-                                <rect key="frame" x="314" y="729" width="60" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-p6-s8o">
-                                <rect key="frame" x="303" y="736" width="83" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Itinerary Box" translatesAutoresizingMaskIntoConstraints="NO" id="pjx-KA-5ZF">
-                                <rect key="frame" x="34" y="215" width="340" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Itinerary Box" translatesAutoresizingMaskIntoConstraints="NO" id="Tv1-c2-qlB">
-                                <rect key="frame" x="34" y="329" width="340" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Itinerary Box" translatesAutoresizingMaskIntoConstraints="NO" id="UWl-H8-ivP">
-                                <rect key="frame" x="37" y="443" width="340" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szk-Tr-ndB">
-                                <rect key="frame" x="37" y="61" width="40" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="gUd-y2-dWt"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Itinerary Box" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-vE-hSX">
-                                <rect key="frame" x="34" y="573" width="340" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhN-OJ-KTm">
-                                <rect key="frame" x="97" y="186" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ySX-6b-V5C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2Gj-TR-EBL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D8m-3L-QbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seoul Trip 🛫" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c42-3H-l17">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="39" id="ihf-KV-keI">
+                                <rect key="frame" x="0.0" y="109.5" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihf-KV-keI" id="zc7-Ou-Z0f">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZA-bM-lZe">
+                                            <rect key="frame" x="0.0" y="-5" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <items>
+                                                <navigationItem id="hpG-eb-DxX">
+                                                    <leftBarButtonItems>
+                                                        <barButtonItem title="Photos" id="rU8-n3-arN"/>
+                                                        <barButtonItem title="Itinerary" id="9Oe-Ek-a6R"/>
+                                                        <barButtonItem title="Journal" id="WnQ-eo-Q60"/>
+                                                        <barButtonItem title="Documents" id="pFz-k9-OiA"/>
+                                                    </leftBarButtonItems>
+                                                </navigationItem>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ysi-vq-2sa" id="9pL-G3-CgU"/>
+                            <outlet property="delegate" destination="ysi-vq-2sa" id="Chn-Gh-bZp"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZqL-tT-xun"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-eK-TqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756.521739130435" y="97.767857142857139"/>
+            <point key="canvasLocation" x="3534.7826086956525" y="75.669642857142847"/>
         </scene>
         <!--Journal View Controller-->
         <scene sceneID="oYD-6o-SGV">
@@ -347,16 +300,8 @@
                                     <navigationItem id="va4-oD-ezt">
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="Zd9-uo-NbQ"/>
                                         <leftBarButtonItems>
-                                            <barButtonItem title="Photos" id="9sT-XS-Tn0">
-                                                <connections>
-                                                    <segue destination="m3P-wY-WFh" kind="show" id="nkT-Ym-Y53"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Itinerary" id="9yn-hc-66P">
-                                                <connections>
-                                                    <segue destination="8Bj-jY-v7t" kind="show" id="cYk-bL-Epe"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <barButtonItem title="Photos" id="9sT-XS-Tn0"/>
+                                            <barButtonItem title="Itinerary" id="9yn-hc-66P"/>
                                             <barButtonItem title="Journal" id="FPQ-w1-dhN"/>
                                             <barButtonItem title="Documents" id="dFc-ZG-HwF">
                                                 <connections>
@@ -421,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ros-uP-fO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2579.7101449275365" y="97.767857142857139"/>
+            <point key="canvasLocation" x="4400" y="97.767857142857139"/>
         </scene>
         <!--Documents View Controller-->
         <scene sceneID="geh-13-ugA">
@@ -454,16 +399,8 @@
                                     <navigationItem id="5Ns-Og-mH3">
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="Nh7-Wg-cMJ"/>
                                         <leftBarButtonItems>
-                                            <barButtonItem title="Photos" id="9sw-N0-BcX">
-                                                <connections>
-                                                    <segue destination="m3P-wY-WFh" kind="show" id="1k1-tB-vsl"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Itinerary" id="nSi-CN-ZAw">
-                                                <connections>
-                                                    <segue destination="8Bj-jY-v7t" kind="show" id="oXN-qg-mF4"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <barButtonItem title="Photos" id="9sw-N0-BcX"/>
+                                            <barButtonItem title="Itinerary" id="nSi-CN-ZAw"/>
                                             <barButtonItem title="Journal" id="Dea-xN-UpQ">
                                                 <connections>
                                                     <segue destination="Ing-If-g6e" kind="show" id="Bq1-cD-9S1"/>
@@ -482,29 +419,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MW-OJ-JRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3331.884057971015" y="97.767857142857139"/>
+            <point key="canvasLocation" x="5152.1739130434789" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XE4-o9-6gd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gIE-DY-MH9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EcS-4Z-d6x">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ysi-vq-2sa" kind="relationship" relationship="rootViewController" id="TMW-s0-jJL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCl-zQ-nHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3483" y="798"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="g6g-GJ-R1Y"/>
         <segue reference="Bq1-cD-9S1"/>
-        <segue reference="cYk-bL-Epe"/>
-        <segue reference="nkT-Ym-Y53"/>
         <segue reference="jYY-D0-VTY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add" width="62" height="62"/>
         <image name="Barcelona" width="149" height="141"/>
         <image name="Calgary" width="149" height="141"/>
-        <image name="Itinerary Box" width="322" height="83"/>
         <image name="Logo" width="458" height="334"/>
         <image name="NYC" width="149" height="141"/>
         <image name="Rectangle 11" width="301" height="345"/>
         <image name="Seoul" width="149" height="141"/>
-        <image name="arrow.backward" catalog="system" width="32" height="32"/>
-        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="32" height="32"/>
-        <image name="pencil" catalog="system" width="32" height="32"/>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

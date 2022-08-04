@@ -21,6 +21,8 @@
 		BD9840EA289AC3DB0036D3AA /* itineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9840E9289AC3DB0036D3AA /* itineraryViewController.swift */; };
 		BD9840EC289AC3EA0036D3AA /* journalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9840EB289AC3EA0036D3AA /* journalViewController.swift */; };
 		BD9840EE289AC3F30036D3AA /* documentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9840ED289AC3F30036D3AA /* documentsViewController.swift */; };
+		BD9840F0289C0B620036D3AA /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9840EF289C0B620036D3AA /* ItineraryTableViewController.swift */; };
+		BD9840F2289C0B990036D3AA /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9840F1289C0B990036D3AA /* Tasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		BD9840E9289AC3DB0036D3AA /* itineraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itineraryViewController.swift; sourceTree = "<group>"; };
 		BD9840EB289AC3EA0036D3AA /* journalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalViewController.swift; sourceTree = "<group>"; };
 		BD9840ED289AC3F30036D3AA /* documentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentsViewController.swift; sourceTree = "<group>"; };
+		BD9840EF289C0B620036D3AA /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
+		BD9840F1289C0B990036D3AA /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				BD9840B62899A1A60036D3AA /* SceneDelegate.swift */,
 				BD9840B82899A1A60036D3AA /* ViewController.swift */,
 				BD9840BA2899A1A60036D3AA /* Main.storyboard */,
+				BD9840EF289C0B620036D3AA /* ItineraryTableViewController.swift */,
+				BD9840F1289C0B990036D3AA /* Tasks.swift */,
 				BD9840E9289AC3DB0036D3AA /* itineraryViewController.swift */,
 				BD9840EB289AC3EA0036D3AA /* journalViewController.swift */,
 				BD9840ED289AC3F30036D3AA /* documentsViewController.swift */,
@@ -275,8 +281,10 @@
 			files = (
 				BD9840EA289AC3DB0036D3AA /* itineraryViewController.swift in Sources */,
 				BD9840EE289AC3F30036D3AA /* documentsViewController.swift in Sources */,
+				BD9840F2289C0B990036D3AA /* Tasks.swift in Sources */,
 				BD9840E8289AC3B60036D3AA /* photosViewController.swift in Sources */,
 				BD9840B92899A1A60036D3AA /* ViewController.swift in Sources */,
+				BD9840F0289C0B620036D3AA /* ItineraryTableViewController.swift in Sources */,
 				BD9840B52899A1A60036D3AA /* AppDelegate.swift in Sources */,
 				BD9840BF2899A1A60036D3AA /* Final_Project.xcdatamodeld in Sources */,
 				BD9840B72899A1A60036D3AA /* SceneDelegate.swift in Sources */,
