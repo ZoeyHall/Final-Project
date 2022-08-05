@@ -9,14 +9,27 @@ import UIKit
 
 class ItineraryTableViewController: UITableViewController {
 
-    var tasks : [Tasks] = []
-
+    var tasks : [TaskCD] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        tasks = createTasks()
+        func getTasks() {
+          if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+
+            if let coreDataTasks = try? context.fetch(TaskCD.fetchRequest()) as? [TaskCD] {
+                if let theTasks = coreDataTasks {
+                    tasks = theTasks
+                    tableView.reloadData()
+                }
+            }
+          }
+        }
+       
     }
-    func createTasks() -> [Tasks] {
+    
+    override func viewWillAppear(_ animated: Bool) {
+      getTasks()
+    }
+   /* func createTasks() -> [Tasks] {
 
         let brunch = Tasks()
         brunch.name = "Brunch"
@@ -35,7 +48,7 @@ class ItineraryTableViewController: UITableViewController {
    
 
       return [brunch, sightseeing]
-    }
+    } */
 
     // MARK: - Table view data source
 

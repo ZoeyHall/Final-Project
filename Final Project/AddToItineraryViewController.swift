@@ -31,8 +31,12 @@ class AddToItineraryViewController: UIViewController {
     }
     
     @IBAction func addToItinerary(_ sender: Any) {
-        let newTask = Tasks()
-         
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+
+           // we are creating a new ToDoCD object here, naming it toDo
+            let newTask = TaskCD(entity:TaskCD.entity(), insertInto: context)
+           
          
        
         if let name = nameTextField.text{
@@ -51,8 +55,12 @@ class AddToItineraryViewController: UIViewController {
         newTask.important = importantSwitch.isOn
         
           
-        previousVC.tasks.append(newTask)
-        previousVC.tableView.reloadData()
+    //    previousVC.tasks.append(newTask)
+    //    previousVC.tableView.reloadData()
+            
+            try? context.save()
+            
+        navigationController?.popViewController(animated: true)
 
     }
     

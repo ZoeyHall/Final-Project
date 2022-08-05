@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -130,7 +131,11 @@
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="HQU-qY-oTK"/>
                                         <leftBarButtonItems>
                                             <barButtonItem title="Photos" id="qzJ-wS-zwh"/>
-                                            <barButtonItem title="Itinerary" id="ugu-r1-wR8"/>
+                                            <barButtonItem title="Itinerary" id="ugu-r1-wR8">
+                                                <connections>
+                                                    <segue destination="ysi-vq-2sa" kind="show" id="Tf9-IU-4e0"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem title="Journal" id="IMa-UQ-Zph">
                                                 <connections>
                                                     <segue destination="Ing-If-g6e" kind="show" id="ai3-3o-hwN"/>
@@ -194,7 +199,7 @@
             <objects>
                 <tableViewController id="ysi-vq-2sa" customClass="ItineraryTableViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="X9C-pN-UEg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seoul Trip 🛫" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c42-3H-l17">
@@ -204,15 +209,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bl5-wi-tA7">
-                            <rect key="frame" x="0.0" y="171" width="414" height="84"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Add"/>
-                            <connections>
-                                <segue destination="TM3-Vd-hpa" kind="show" id="J73-gC-j32"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="39" id="ihf-KV-keI">
                                 <rect key="frame" x="0.0" y="109.5" width="414" height="39"/>
@@ -228,7 +224,19 @@
                                                 <navigationItem id="hpG-eb-DxX">
                                                     <leftBarButtonItems>
                                                         <barButtonItem title="Photos" id="rU8-n3-arN"/>
-                                                        <barButtonItem title="Itinerary" id="9Oe-Ek-a6R"/>
+                                                        <barButtonItem style="plain" id="kSF-bQ-xas">
+                                                            <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" id="Dhs-Ex-dJs">
+                                                                <rect key="frame" x="84.5" y="13" width="94" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <menu key="menu" id="0y7-xg-xiN">
+                                                                    <children>
+                                                                        <command title="Itinerary" id="Lyx-tr-sZY"/>
+                                                                        <command title="Add New Event" id="1YC-77-ugm"/>
+                                                                    </children>
+                                                                </menu>
+                                                                <state key="normal" title="Itinerary"/>
+                                                            </button>
+                                                        </barButtonItem>
                                                         <barButtonItem title="Journal" id="WnQ-eo-Q60"/>
                                                         <barButtonItem title="Documents" id="pFz-k9-OiA"/>
                                                     </leftBarButtonItems>
@@ -246,7 +254,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZqL-tT-xun"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-eK-TqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +283,11 @@
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="Zd9-uo-NbQ"/>
                                         <leftBarButtonItems>
                                             <barButtonItem title="Photos" id="9sT-XS-Tn0"/>
-                                            <barButtonItem title="Itinerary" id="9yn-hc-66P"/>
+                                            <barButtonItem title="Itinerary" id="9yn-hc-66P">
+                                                <connections>
+                                                    <segue destination="ysi-vq-2sa" kind="show" id="kpN-h2-4ez"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem title="Journal" id="FPQ-w1-dhN"/>
                                             <barButtonItem title="Documents" id="dFc-ZG-HwF">
                                                 <connections>
@@ -374,7 +386,11 @@
                                         <barButtonItem key="backBarButtonItem" title="yes" image="arrowshape.turn.up.backward.fill" catalog="system" id="Nh7-Wg-cMJ"/>
                                         <leftBarButtonItems>
                                             <barButtonItem title="Photos" id="9sw-N0-BcX"/>
-                                            <barButtonItem title="Itinerary" id="nSi-CN-ZAw"/>
+                                            <barButtonItem title="Itinerary" id="nSi-CN-ZAw">
+                                                <connections>
+                                                    <segue destination="ysi-vq-2sa" kind="show" id="OvR-y8-BnM"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem title="Journal" id="Dea-xN-UpQ">
                                                 <connections>
                                                     <segue destination="Ing-If-g6e" kind="show" id="Bq1-cD-9S1"/>
@@ -385,6 +401,58 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ga-ua-tjC">
+                                <rect key="frame" x="20" y="173" width="374" height="904"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flights ✈️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPM-xT-dFA">
+                                        <rect key="frame" x="16" y="19" width="78" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Visa" translatesAutoresizingMaskIntoConstraints="NO" id="2vv-Q9-wcc">
+                                        <rect key="frame" x="8" y="238" width="358" height="164"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY8-JD-fgP">
+                                        <rect key="frame" x="16" y="209" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Flight Ticket-1" translatesAutoresizingMaskIntoConstraints="NO" id="r1M-6o-pRi">
+                                        <rect key="frame" x="16" y="38" width="340" height="163"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLJ-NS-IQ5">
+                                        <rect key="frame" x="16" y="433" width="68" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Passport" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-x5-dQY">
+                                        <rect key="frame" x="16" y="462" width="340" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Train Ticket 🚝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSt-7g-ryt">
+                                        <rect key="frame" x="29" y="642" width="116" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Train Ticket" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-ej-Ena">
+                                        <rect key="frame" x="8" y="671" width="327" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="exC-a1-Ct0"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="lVS-Y3-NU4"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="opD-X2-tq8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -530,22 +598,26 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SiJ-Di-Gfm"/>
-        <segue reference="ai3-3o-hwN"/>
-        <segue reference="hWX-hy-FxA"/>
+        <segue reference="g6g-GJ-R1Y"/>
+        <segue reference="Bq1-cD-9S1"/>
+        <segue reference="OvR-y8-BnM"/>
+        <segue reference="Tkg-LD-Trp"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Add" width="62" height="62"/>
         <image name="Barcelona" width="149" height="141"/>
         <image name="Calgary" width="149" height="141"/>
+        <image name="Flight Ticket-1" width="324" height="140"/>
         <image name="Logo" width="458" height="334"/>
         <image name="NYC" width="149" height="141"/>
+        <image name="Passport" width="363" height="175"/>
         <image name="Rectangle 11" width="301" height="345"/>
         <image name="Seoul" width="149" height="141"/>
-        <image name="arrow.backward" catalog="system" width="32" height="32"/>
-        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="32" height="32"/>
-        <image name="pencil" catalog="system" width="32" height="32"/>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="Train Ticket" width="324" height="140"/>
+        <image name="Visa" width="363" height="175"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
