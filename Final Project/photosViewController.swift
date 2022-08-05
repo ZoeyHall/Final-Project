@@ -11,15 +11,13 @@ import UIKit
 class photosViewController:
     UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imageViewTwo: UIImageView!
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
   
-    @IBAction func didTapButtonTwo(){
+    @IBAction func didTapButtonTwo() {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
@@ -28,11 +26,17 @@ class photosViewController:
     }
     
 }
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       print("\(info)")
+        
+        if let imageViewTwo = info [UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            //imageView.image = image
+        }
+        
+        
         picker.dismiss(animated: true, completion: nil)
-        //imageView.image = image
+        
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
