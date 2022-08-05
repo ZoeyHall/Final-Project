@@ -172,7 +172,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Import From Gallary"/>
                                 <connections>
-                                    <action selector="didTapButtonTwo" destination="m3P-wY-WFh" eventType="touchUpInside" id="rfG-37-ocG"/>
+                                    <action selector="chooseFromLibraryTapped:" destination="m3P-wY-WFh" eventType="touchUpInside" id="mOD-ez-321"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rzO-Qa-C6B">
@@ -187,7 +187,7 @@
                     <navigationItem key="navigationItem" id="a9I-hL-98F"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageViewTwo" destination="rzO-Qa-C6B" id="DTq-Tk-R46"/>
+                        <outlet property="displayImage" destination="rzO-Qa-C6B" id="SxH-eA-oCZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZE-nM-EW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -598,10 +598,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g6g-GJ-R1Y"/>
-        <segue reference="Bq1-cD-9S1"/>
-        <segue reference="OvR-y8-BnM"/>
-        <segue reference="Tkg-LD-Trp"/>
+        <segue reference="SiJ-Di-Gfm"/>
+        <segue reference="ai3-3o-hwN"/>
+        <segue reference="Tf9-IU-4e0"/>
+        <segue reference="hWX-hy-FxA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Barcelona" width="149" height="141"/>
@@ -614,10 +614,10 @@
         <image name="Seoul" width="149" height="141"/>
         <image name="Train Ticket" width="324" height="140"/>
         <image name="Visa" width="363" height="175"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="arrow.backward" catalog="system" width="32" height="32"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="32" height="32"/>
+        <image name="pencil" catalog="system" width="32" height="32"/>
+        <image name="plus" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

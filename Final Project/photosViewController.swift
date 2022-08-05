@@ -10,36 +10,50 @@ import UIKit
 
 class photosViewController:
     UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet var imageViewTwo: UIImageView!
+    var imagePicker = UIImagePickerController()
+  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imagePicker.delegate = self
         
     }
   
-    @IBAction func didTapButtonTwo() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
+    @IBAction func chooseFromLibraryTapped(_ sender: UIButton) {
+        
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+       // let vc = UIImagePickerController()
+       // vc.sourceType = .photoLibrary
+       // vc.delegate = self
+       // vc.allowsEditing = true
+       // present(vc, animated: true)
     }
     
-}
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+//extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  //  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let imageViewTwo = info [UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            //imageView.image = image
-        }
+   //     if let imageViewTwo = info [UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+   //         imageView.image = image
+   //     }
         
         
-        picker.dismiss(animated: true, completion: nil)
+   //     picker.dismiss(animated: true, completion: nil)
         
+ //   }
+   // func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+  //      picker.dismiss(animated: true, completion: nil)
+ //   }
+    @IBOutlet weak var displayImage: UIImageView!
+    
+func imagePickerController (_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+    if let selectedImage = info [UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        displayImage.image = selectedImage
     }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
+    imagePicker.dismiss(animated: true, completion: nil)
+}
 }
 
